@@ -71,7 +71,7 @@ public class DisplayFoodsActivity extends AppCompatActivity {
         dba.close();
 
         //setup adapter
-        foodAdapter = new CustomListViewAdapter(this, R.layout.list_row, dbFoods);
+        foodAdapter = new CustomListViewAdapter(DisplayFoodsActivity.this, R.layout.list_row, dbFoods);
         listView.setAdapter(foodAdapter);
         foodAdapter.notifyDataSetChanged();
     }

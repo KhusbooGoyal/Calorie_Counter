@@ -101,8 +101,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         SQLiteDatabase dbs = this.getReadableDatabase();
 
-        Cursor cursor = dbs.query(Constants.TABLE_NAME,
-                new String[] { Constants.KEY_ID, Constants.FOOD_NAME, Constants.FOOD_CALORIES_NAME, Constants.DATE_NAME}, null, null, null, null,
+        Cursor cursor = dbs.query(Constants.TABLE_NAME, new String[] { Constants.KEY_ID, Constants.FOOD_NAME, Constants.FOOD_CALORIES_NAME, Constants.DATE_NAME}, null, null, null, null,
                 Constants.DATE_NAME + " DESC ");
 
         //loop through..

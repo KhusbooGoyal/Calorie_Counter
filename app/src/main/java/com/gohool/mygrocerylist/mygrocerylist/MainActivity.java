@@ -46,13 +46,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void saveDataToDB() {
+    public void saveDataToDB() {
 
         Food food = new Food();
         String name = foodName.getText().toString().trim();
         String calString = foodCals.getText().toString().trim();
+        int cals;
+        try{
+            cals = Integer.parseInt(calString.trim());
 
-        int cals = Integer.parseInt(calString);
+
         if (name.equals("") || calString.equals("")){
             Toast.makeText(getApplicationContext(), "No empty fields allowed", Toast.LENGTH_LONG).show();
         }else {
@@ -70,6 +73,9 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(MainActivity.this, DisplayFoodsActivity.class));
         }
     }
+    catch(Exception e){
+        dba.close();
+    }}
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
