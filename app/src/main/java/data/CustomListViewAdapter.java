@@ -80,13 +80,7 @@ public class CustomListViewAdapter extends ArrayAdapter<Food> {
         row.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(activity, FoodItemsDetailsActivity.class);
 
-                Bundle mBundle = new Bundle();
-                mBundle.putSerializable("userObj", finalHolder.food);
-                i.putExtras(mBundle);
-
-                activity.startActivity(i);
             }
         });
 
